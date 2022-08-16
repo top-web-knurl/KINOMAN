@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #api ключ
-/src/framework/constants.js
+/src/frameworkAPI/constants.js

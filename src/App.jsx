@@ -1,7 +1,6 @@
 import { Header } from './UI/Header/Header';
 import { Logo } from './UI/Logo/Logo';
 import { MoveGrid } from './components/MoveGrid/MoveGrid';
-import 'materialize-css';
 import './App.scss';
 
 function App() {
