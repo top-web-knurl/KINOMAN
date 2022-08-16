@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Impact';
+    src: url('./font/Impact.eot');
+    src: local('Impact'),
+        url('./font/Impact.eot?#iefix') format('embedded-opentype'),
+        url('./font/Impact.woff') format('woff'),
+        url('./font/Impact.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Logo {
+    a {
+        font-size: max(min(62px, 5.8vw), 38px);
+        line-height: 1;
+        color: #ffca28;
+        font-family: 'Impact';
+    }
+}
