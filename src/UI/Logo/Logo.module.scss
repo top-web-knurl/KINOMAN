@@ -10,10 +10,13 @@
 }
 
 .Logo {
+    display: flex;
+    align-items: center;
     a {
-        font-size: max(min(62px, 5.8vw), 38px);
+        font-size: max(min(38px, 2.8vw), 30px);
         line-height: 1;
         color: #ffca28;
         font-family: 'Impact';
+        text-decoration: none;
     }
 }
