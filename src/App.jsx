@@ -1,15 +1,15 @@
 import { Header } from './UI/Header/Header';
-import { MoveGrid } from './components/MoveGrid/MoveGrid';
+import { MovieGrid } from './components/MovieGrid/MovieGrid';
 import { Routes, Route, Link } from "react-router-dom";
-import { MovePage } from './components/MovePage/MovePage';
+import { MoviePage } from './components/MoviePage/MoviePage';
 import './App.scss';
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<MoveGrid />} />
-        <Route path="/:id" element={<MovePage />} />
+        <Route path="/" element={<MovieGrid />} />
+        <Route path="/:id" element={<MoviePage />} />
       </Routes>
     </div>
   );
