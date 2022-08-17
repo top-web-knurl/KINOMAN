@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { Card } from "../Card/Card";
 import { responseDb } from "./responseDb";
 import {Link } from "react-router-dom";
-export const MoveGrid = () => {
+export const MovieGrid = () => {
     // const getPopular = async () => {
     //     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ru-RU&page=1&region=ru`;
 

@@ -1,6 +1,6 @@
 import { Header } from './UI/Header/Header';
 import { MovieGrid } from './components/MovieGrid/MovieGrid';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { MoviePage } from './components/MoviePage/MoviePage';
 import './App.scss';
 function App() {

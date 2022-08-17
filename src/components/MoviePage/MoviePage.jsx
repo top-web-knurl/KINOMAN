@@ -1,7 +1,6 @@
 import React from "react";
-import classes from './MovePage.module.scss';
 
-export const MovePage = () => {
+export const MoviePage = () => {
 
     return (
         <div >
