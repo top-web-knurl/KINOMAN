@@ -1,6 +1,9 @@
-.Card{
-    img{
-        max-width: 100%;
+.Card {
+    border-radius: 6px;
+    overflow: hidden;
+    img {
+        position: relative;
         border-radius: 6px;
+        max-width: 100%;
     }
 }

@@ -1,0 +1,15 @@
+.MovieItem{
+    color: #fff;
+    text-decoration: none;
+    h6{
+        transition: .22s ease;
+    }
+    &:hover,
+    &:active,
+    &:focus{
+        color: #ffca28;
+        h6{
+            color: #ffca28;
+        }
+    }
+}
