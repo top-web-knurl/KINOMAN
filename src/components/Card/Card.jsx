@@ -4,18 +4,17 @@ import Atropos from 'atropos/react';
 import 'atropos/css';
 export const Card = ({ film }) => {
 
-    const { poster_path, title, id } = film
+    const { poster_path, title} = film;
     const { Card } = classes;
 
     return (
-        <div
-            to={id}
-            className={Card}
-        >
+        <div className={Card}>
             <Atropos
                 activeOffset={40}
                 shadowScale={1.07}
-            ><img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title} /></Atropos>
+            >
+                <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title} />
+                </Atropos>
             <h6 className="mt-1">{title}</h6>
         </div>
     )
