@@ -46,7 +46,6 @@ export const MoviePage = () => {
                 src={`https://www.youtube.com/embed/${movieVideo.results[0].key}`}
                 title={movieVideo.results[0].name}
                 frameBorder="0"
-
                 allowFullScreen
               ></iframe>
               :

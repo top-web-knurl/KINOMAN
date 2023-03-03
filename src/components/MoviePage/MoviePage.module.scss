@@ -16,9 +16,17 @@
     margin: 0 0 25px;
     li{
         margin-bottom: 1px;
+        span:first-child{
+            color: #ffca28;
+        }
     }
 }
 .PosterDesc{
+    strong{
+        display: inline-block;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
     font-size: 18px;
     line-height: 1.2;
     margin-bottom: 15px;
