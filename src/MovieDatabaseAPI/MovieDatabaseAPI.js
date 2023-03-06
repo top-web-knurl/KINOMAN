@@ -25,4 +25,8 @@ export const getMovieOnId = async (id) => {
 export const getMovieVideoOnId = async (id) => {
     return await getResource(`/movie/${id}/videos?api_key=${API_KEY}${language}`)
 }
+// получаем  рекомендации к фильму по id
+export const getRecomendMovieVideosOnId = async (id) => {
+    return await getResource(`/movie/${id}/recommendations?api_key=${API_KEY}${language}&page=1`)
+}
 
