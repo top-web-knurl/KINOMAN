@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY } from "./constants";
+import { API_KEY } from "./settings";
 
 const language = '&language=ru-RU&region=ru';
 export const baseUrl = 'https://api.themoviedb.org/3';
@@ -17,10 +17,11 @@ const getResource = async (url) => {
         .then(data => data)
         .catch(err => console.log(`УПС =( ${err}`))
 }
-
+// получаем фильм по id
 export const getMovieOnId = async (id) => {
     return await getResource(`/movie/${id}?api_key=${API_KEY}${language}`)
 }
+// получаем трейлер фильма по id
 export const getMovieVideoOnId = async (id) => {
     return await getResource(`/movie/${id}/videos?api_key=${API_KEY}${language}`)
 }
