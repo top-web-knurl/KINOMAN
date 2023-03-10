@@ -22,12 +22,13 @@ export const MoviePage = () => {
       .then(data => {
         getMovieVideo(data)
       })
+    getRecomendMovieVideosOnId(movieId)
+    .then(data => {
+      getRecomendMovieVideos(data)
+    })
   }, [movieId])
 
-  getRecomendMovieVideosOnId(movieId)
-  .then(data => {
-    getRecomendMovieVideos(data)
-  })
+ 
 
   if (!movieInfo || movieInfo === null) {
     return <Spinner />
