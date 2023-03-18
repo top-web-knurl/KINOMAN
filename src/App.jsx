@@ -5,6 +5,7 @@ import { MoviePage } from './components/MoviePage/MoviePage';
 import { Wrapper } from './components/UI/Wrapper/Wrapper';
 import { responseDb } from "./responseDb";
 import './App.scss';
+import { MovieRecomends } from './components/MovieRecomends/MovieRecomends';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Header />
       <Wrapper>
         <Routes>
-          <Route path="/" element={<MovieGrid movies={responseDb}/>} />
+          <Route path="/" element={<MovieGrid movies={responseDb} />} />
           <Route path="/movie/:id" element={<MoviePage />} />
         </Routes>
       </Wrapper>

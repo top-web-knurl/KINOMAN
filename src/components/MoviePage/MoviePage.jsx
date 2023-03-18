@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { imageUrlW780, getMovieOnId, getMovieVideoOnId, getRecomendMovieVideosOnId } from "../../MovieDatabaseAPI/MovieDatabaseAPI";
 import { MovieGrid } from "../MovieGrid/MovieGrid";
+import { MovieRecomends } from "../MovieRecomends/MovieRecomends";
 import { Spinner } from "../UI/Spinner/Spinner";
 import classes from './MoviePage.module.scss';
 
@@ -22,12 +23,15 @@ export const MoviePage = () => {
       .then(data => {
         getMovieVideo(data)
       })
+    getRecomendMovieVideosOnId(movieId)
+      .then(data => {
+        getRecomendMovieVideos(data)
+      })
+    getRecomendMovieVideosOnId(movieId)
+      .then(data => {
+        getRecomendMovieVideos(data)
+      })
   }, [movieId])
-
-  getRecomendMovieVideosOnId(movieId)
-  .then(data => {
-    getRecomendMovieVideos(data)
-  })
 
   if (!movieInfo || movieInfo === null) {
     return <Spinner />
@@ -76,17 +80,16 @@ export const MoviePage = () => {
               {movieInfo.overview ? movieInfo.overview : null}
             </p>
           </div>
+
+
+          {movieRecomend ?
+            <MovieGrid movies={movieRecomend} countMovies={6} />
+            :
+            null
+          }
         </div>
-        {movieRecomend ?
-          <>
-            <h2 className="mb-3">Похожие</h2>
-            <div className="row g-3">
-              <MovieGrid movies={movieRecomend} countMovies={6}/>
-            </div>
-          </>
-          :
-          null
-        }
+
+
       </div>
     </>
   )

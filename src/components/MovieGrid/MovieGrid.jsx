@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import classes from './MovieGrid.module.scss';
 
 export const MovieGrid = ({ movies, countMovies = 24 }) => {
-
+    
     const [films] = useState(movies.results);
     const { MovieItem } = classes;
 
