@@ -24,14 +24,12 @@ export const MoviePage = () => {
         getMovieVideo(data)
       })
     getRecomendMovieVideosOnId(movieId)
-      .then(data => {
-        getRecomendMovieVideos(data)
-      })
-    getRecomendMovieVideosOnId(movieId)
-      .then(data => {
-        getRecomendMovieVideos(data)
-      })
+    .then(data => {
+      getRecomendMovieVideos(data)
+    })
   }, [movieId])
+
+ 
 
   if (!movieInfo || movieInfo === null) {
     return <Spinner />
