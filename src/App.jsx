@@ -5,7 +5,7 @@ import { MoviePage } from './components/MoviePage/MoviePage';
 import { Wrapper } from './components/UI/Wrapper/Wrapper';
 import { responseDb } from "./responseDb";
 import './App.scss';
-import { MovieRecomends } from './components/MovieRecomends/MovieRecomends';
+
 
 function App() {
   return (

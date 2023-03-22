@@ -1,35 +1,31 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { imageUrlW780, getMovieOnId, getMovieVideoOnId, getRecomendMovieVideosOnId } from "../../MovieDatabaseAPI/MovieDatabaseAPI";
 import { MovieGrid } from "../MovieGrid/MovieGrid";
-import { MovieRecomends } from "../MovieRecomends/MovieRecomends";
 import { Spinner } from "../UI/Spinner/Spinner";
 import classes from './MoviePage.module.scss';
 
 export const MoviePage = () => {
+  const { Poster, PosterInfo, PosterDesc } = classes;
+
   const [movieInfo, getMovieInfo] = useState(null);
   const [movieVideo, getMovieVideo] = useState(null);
   const [movieRecomend, getRecomendMovieVideos] = useState(null);
-  const { Poster, PosterInfo, PosterDesc } = classes;
 
-  const movieId = useLocation().pathname.replace(/[^0-9]/g, '')
+  const movieId = useLocation().pathname.replace(/[^0-9]/g, '');
 
   useEffect(() => {
-    getMovieOnId(movieId)
-      .then(data => {
-        getMovieInfo(data)
-      })
-    getMovieVideoOnId(movieId)
-      .then(data => {
-        getMovieVideo(data)
-      })
-    getRecomendMovieVideosOnId(movieId)
-    .then(data => {
-      getRecomendMovieVideos(data)
-    })
-  }, [movieId])
+    Promise.all([
+      getMovieOnId(movieId),
+      getMovieVideoOnId(movieId),
+      getRecomendMovieVideosOnId(movieId),
+    ]).then(([movieInfoData, movieVideoData, movieRecommendData]) => {
+      getMovieInfo(movieInfoData);
+      getMovieVideo(movieVideoData);
+      getRecomendMovieVideos(movieRecommendData);
+    });
+  }, [movieId]);
 
- 
 
   if (!movieInfo || movieInfo === null) {
     return <Spinner />
@@ -80,11 +76,12 @@ export const MoviePage = () => {
           </div>
 
 
-          {movieRecomend ?
-            <MovieGrid movies={movieRecomend} countMovies={6} />
-            :
-            null
-          }
+          {movieRecomend && (
+            <>
+              <h2 className="mt-3 mb-4">Похожие</h2>
+              <MovieGrid movies={movieRecomend} countMovies={6} key={movieId}/>
+            </>
+          )}
         </div>
 
 
