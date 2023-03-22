@@ -78,7 +78,7 @@ export const MoviePage = () => {
 
           {movieRecomend && (
             <>
-              <h2 className="mt-3 mb-4">Похожие</h2>
+              <h2 className="mt-4 mb-4">Фильмы, похожие на {movieInfo.title}</h2>
               <MovieGrid movies={movieRecomend} countMovies={6} key={movieId}/>
             </>
           )}
